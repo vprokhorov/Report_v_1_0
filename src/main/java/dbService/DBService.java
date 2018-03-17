@@ -102,7 +102,7 @@ public class DBService {
                     append("3306/").                //port
                     append("idea?").          //db name
                     append("user=root&").          //login
-                    append("password=74067406");       //password
+                    append("password=********");       //password     ПАРОЛЬ!!!!!
 
             System.out.println("URL: " + url + "\n");
 
