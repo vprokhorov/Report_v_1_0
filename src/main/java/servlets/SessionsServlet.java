@@ -10,13 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author v.chibrikov
- *         <p>
- *         Пример кода для курса на https://stepic.org/
- *         <p>
- *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
- */
+
 public class SessionsServlet extends HttpServlet {
     private final AccountService accountService;
 
@@ -50,6 +44,7 @@ public class SessionsServlet extends HttpServlet {
         if (login == null || pass == null) {
             response.setContentType("text/html;charset=utf-8");
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().println("BAD_REQUEST");
             return;
         }
 
@@ -57,6 +52,7 @@ public class SessionsServlet extends HttpServlet {
         if (profile == null || !profile.getPass().equals(pass)) {
             response.setContentType("text/html;charset=utf-8");
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.getWriter().println("UNAUTHORIZED");
             return;
         }
 
